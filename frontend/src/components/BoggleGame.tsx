@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import lost from '/src/assets/hangman/lost.gif';
+import vic from '/src/assets/hangman/victory.gif';
 
 interface BoggleGameProps {
   dictionaryApiUrl: string;
@@ -260,13 +262,13 @@ const BoggleGame: React.FC<BoggleGameProps> = ({ dictionaryApiUrl }) => {
             {attempts >= maxAttempts ? (
               <p>
               <h2 className="text-2xl font-bold mb-4">Game Over😢</h2>
-              <img src="/src/assets/hangman/lost.gif" alt="game-status" className="w-32 mx-auto mb-4"></img>
+              <img src={lost} alt="game-status" className="w-32 mx-auto mb-4"></img>
                You have reached the maximum number of attempts.
               </p>
             ) : (
               <div>
                 <h2 className="text-2xl font-bold mb-4">Congratulations!🎊</h2>
-                <img src="/src/assets/hangman/victory.gif" alt="game-status" className="w-32 mx-auto mb-4"></img>
+                <img src={vic} alt="game-status" className="w-32 mx-auto mb-4"></img>
                 <p className="mb-4">You have guessed all words correctly.</p>
                 <ul className="list-disc list-inside">
                   {selectedWords.map(({ word, definition }) => (

@@ -39,17 +39,24 @@ const DarkModeToggle: React.FC = () => {
         className="sr-only peer"
       />
       {/* Toggle switch UI */}
-      <div className="relative w-11 h-6 bg-gray-200 rounded-full peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:bg-blue-600 transition-colors">
+      <div className="relative w-14 h-8 bg-gray-200 rounded-full peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:bg-blue-600 transition-colors">
         <div
-          className={`absolute top-[2px] left-[2px] w-5 h-5 bg-white border border-gray-300 rounded-full transition-transform ${
-            isDarkMode ? "translate-x-5" : ""
-          } dark:border-gray-600`}
-        ></div>
+          className={`absolute top-0.5 left-0.5 w-7 h-7 flex items-center justify-center rounded-full transition-transform ${
+            isDarkMode ? "translate-x-6" : ""
+          }`}
+        >
+          {/* Icons without background */}
+          {isDarkMode ? (
+            <span role="img" aria-label="moon" className="text-lg">
+              🌙
+            </span>
+          ) : (
+            <span role="img" aria-label="sun" className="text-lg">
+              ☀️
+            </span>
+          )}
+        </div>
       </div>
-      {/* Toggle label text */}
-      <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-600">
-        {isDarkMode ? "Light Mode" : "Dark Mode"}
-      </span>
     </label>
   );
 };

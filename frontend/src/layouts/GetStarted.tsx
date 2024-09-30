@@ -5,7 +5,7 @@ import Form from "../components/Form";
 import HangmanGame from "../components/hangman";
 import Form2 from "../components/Form2";
 import Form3 from "../components/Form3";
-import hangman from "../assets/hangman/hangman-6.svg";
+import hangman from "../assets/hangman/hangman-6.png";
 import RockPaperScissors from "../components/rockps";
 import consti from "../assets/rps/constitution.png";
 import BoggleGame from "../components/BoggleGame";

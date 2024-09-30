@@ -52,14 +52,20 @@ const Header: React.FC<HeaderProps> = ({ showGetStarted = true }) => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} className="h-12 w-auto" alt="Logo" />
-            <span className="text-3xl text-gray-900 font-bold tracking-tight">KYR</span>
+            <span className="text-3xl text-gray-900 font-bold tracking-tight">
+              KYR
+            </span>
           </Link>
         </div>
 
         {/* Hamburger icon for mobile */}
         <div className="lg:hidden">
           <button onClick={toggleMenu} className="text-gray-900">
-            {isMenuOpen ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+            {isMenuOpen ? (
+              <AiOutlineClose size={28} />
+            ) : (
+              <AiOutlineMenu size={28} />
+            )}
           </button>
         </div>
 
@@ -72,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ showGetStarted = true }) => {
           >
             Dictionary
           </button>
-          <DarkModeToggle />
+
           {showGetStarted ? (
             <Link
               to="/get-started"
@@ -88,6 +94,7 @@ const Header: React.FC<HeaderProps> = ({ showGetStarted = true }) => {
               Home
             </Link>
           )}
+          <DarkModeToggle />
         </div>
 
         {/* Mobile menu */}
@@ -117,7 +124,11 @@ const Header: React.FC<HeaderProps> = ({ showGetStarted = true }) => {
                 Home
               </Link>
             )}
-            <DarkModeToggle />
+
+            {/* Center the DarkModeToggle in mobile view */}
+            <div className="flex justify-center">
+              <DarkModeToggle />
+            </div>
           </div>
         )}
       </div>

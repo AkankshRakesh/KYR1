@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="container mx-auto px-4 py-12 bg-stone-100" id='cn'>
@@ -43,12 +44,12 @@ const About = () => {
 
         {/* Call-to-Action Button */}
         <div className="text-center mt-8">
-          <a
-            href="/get-started"
+          <Link
+            to="/get-started"
             className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-2xl font-semibold rounded-lg shadow-lg hover:shadow-2xl hover:from-pink-600 hover:to-red-600 transition duration-300"
           >
             Get Started
-          </a>
+          </Link>
         </div>
       </div>
     </div>
